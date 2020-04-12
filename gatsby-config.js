@@ -7,12 +7,12 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Delog`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    title: `A few syns a day, keeps old habits away`,
+    description: `Blog with recipes adpated to the Slimming World lifestyle.`,
     siteUrl: `https://delog-w3layouts.netlify.com/`,
     home: {
-      title: `Hi! I'm Delog`,
-      description: `I have been specifically designed to become a digital home for designers and developers, help them build amazing professional looking websites with ease. You don't have to worry about nitty gritty of web hosting services to run a blog and yet take full advantage of CMS to manage content :)`,
+      title: `Hey, I'm Catia Costa`,
+      description: `I'm an web developer and I'm trying to fusion two big passions of mine (coding and cooking) with my new lifestyle. Eating better, eating more veggies and fruits, having conscience of what I'm eating, planing my meals and of course, syn a little bit.`,
     },
     /* W3Layouts domain verification key for contact forms https://my.w3layouts.com/Forms/ */
     w3l_dom_key: `5e609f7a2d23fCF_Domain_verify` 
