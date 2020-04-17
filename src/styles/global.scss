@@ -1,7 +1,105 @@
-$primary-color: #381696;
-$primary-text-color: #fff;
+@charset "UTF-8";
 
-html,
+/*
+  Contents
+  --------
+	0 	$SETTINGS
+	1 	$TOOLS
+	2 	$ELEMENTS
+	3 	$OBJECTS
+	4 	$UTILITIES
+*/
+
+//============================
+//*	$SETTINGS
+//	Preprocessor variables and methods
+//
+@import "settings/global";
+@import "settings/typography";
+@import "settings/spacing";
+@import "settings/colours";
+@import "settings/mq";
+@import "settings/zindex";
+@import "settings/animation";
+
+//============================
+//*	$TOOLS
+//	Mixins and functions
+//
+@import "tools/functions";
+@import "tools/font_size";
+@import "tools/zindex";
+@import "tools/mq";
+@import "tools/position";
+@import "tools/ratio";
+@import "tools/object-fit";
+
+
+//============================
+//*	$ELEMENTS
+//	Single HTML element selectors without classes
+//
+@import "elements/page";
+@import "elements/type";
+@import "elements/images";
+
+//============================
+//*	$VENDOR
+//	Third-party Library-specific CSS e.g. Flickity
+//
+@import "vendor/all";
+
+//============================
+//	$OBJECTS
+//  Classes for page structure typically following the OOCSS methodology
+//  The first layer in which we find class-level specificity
+//
+@import "objects/flex";
+@import "objects/container";
+@import "objects/row";
+@import "objects/grid";
+@import "objects/media";
+@import "objects/flex-media";
+@import "objects/img";
+@import "objects/main";
+
+//============================
+//	$TYPOGRAPHY
+//  Classes for the display and control of your typography.
+//  These elements sit loosely between objects and components and in turn can be overridden on a piece of UI
+//
+@import "typography/heading";
+@import "typography/copy";
+
+
+//============================
+//  $UTILITIES
+//	utilities classes in accordance with DRY mentality. Eliminates the need to create specific classes to perform simple tasks
+//  NOTE: Use sparingly
+//
+@import "utilities/util";
+
+
+
+//Colour Palette
+//$primary-color: #381696;
+$primary-color: #333;
+$secondary-color: #ea7878;
+$tertiary-color: #fff;
+
+
+section {
+  margin-top: $global-spacing-m;
+  margin-bottom: $global-spacing-m;
+}
+
+h2, h3, h4, h5 {
+  font-family: $font-tertiary;
+  text-align: center;
+}
+
+
+/* html,
 body {
   margin: 0;
   padding: 0;
@@ -9,60 +107,20 @@ body {
 * {
   margin-top: 0
 }
-/* System Fonts as used by Medium and WordPress */
+
 body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
   background-color: #fff;
-  //background-color: #fff;
   border-top: 10px solid $primary-color;
-}
+} 
 a {
   color: $primary-color;
   text-decoration: none;
   &:hover {
-    text-decoration: underline;
+    //text-decoration: underline;
   }
 }
-.site-wrapper {
-  padding: 32px;
-  max-width: 1140px;
-  margin: 0 auto;
-  img {
-    max-width: 100%;
-  }
-}
-.navigation {
-  font-weight: 300;
-  a {
-    color: #888;
-    text-decoration: none;
-    margin: 0 8px 0;
-    &[aria-current] {
-      color: $primary-color;
-      font-weight: 700;
-    }
-    &:hover {
-      color: $primary-color;
-    }
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
-  background: white;
-  margin-bottom: 32px;
-  align-items: center;
-}
-.site-title a {
-  color: $primary-color;
-  text-decoration: none;
-  font-weight: 900;
-  text-transform: uppercase;
-}
+
 .hero-header {
   padding: 0 0 64px;
   max-width: 980px;
@@ -72,6 +130,7 @@ a {
   font-weight: 900;
   margin-bottom: 0.5rem;
 }
+*/
 .button {
   padding: 18px 27px;
   display: inline-block;
@@ -87,7 +146,7 @@ a {
   &.-primary {
     background-color: $primary-color;
     border-color: $primary-color;
-    color: $primary-text-color;
+    color: $tertiary-color;
     &:hover {
       background-color: #10072b;
       color: #fff;
@@ -170,42 +229,12 @@ a {
   grid-gap: 32px;
   margin-top: 32px;
 }
-.card {
-  display: grid;
-  background:white;
-  border-radius: 9px;
-  border: 1px solid #eee;
-  box-shadow: 0 0 30px #d5d5d5;
-  overflow: hidden;
-  line-height: 1.5;
-  &:hover .post-link {
-    color: $primary-color;
-  }
-  > a img {
-    display: block;
-  }
-  > header {
-    padding: 24px;
-  }
-  > h2:first-child {
-    margin: 0 0 0.5rem 0;
-  }
-  .post-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
-  }
-  .post-meta {
-    font-weight: 100;
-    margin-bottom: 0;
-  }
-  .post-link {
-    color: #333;
-    text-decoration: none;
-  }
-}
+
+
 .post-meta {
-  font-size: 0.8rem;
-  color: #666;
+  padding-top: $global-spacing-s;
+  @include font-size($size-centi);
+  color: $secondary-color;
 }
 .site-footer {
   text-align: center;

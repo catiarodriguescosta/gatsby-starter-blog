@@ -3,7 +3,13 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
-import HeroHeader from "../components/heroHeader"
+import Hero from "../components/hero"
+
+import styled from "styled-components"
+
+const LatestRecipes = styled.section`
+
+`
 
 const IndexPage = ({
   data: {
@@ -12,10 +18,10 @@ const IndexPage = ({
   },
 }) => {
 
-  const Posts = edges
+   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-
+ 
   return (
     <Layout>
       <Helmet>
@@ -23,11 +29,17 @@ const IndexPage = ({
         <meta name="description" content={site.siteMetadata.description} />
         {!site.siteMetadata.w3l_dom_key ? null : <meta name="w3l-domain-verification" content={site.siteMetadata.w3l_dom_key} />}
       </Helmet>
-      <HeroHeader/>
-      <h2>Blog Posts &darr;</h2>
-      <div className="grids">
-        {Posts}
-      </div>
+      <Hero />
+      {/* <Content /> */}
+      <LatestRecipes>
+        <div class="o-container">
+          <h2>The latest recipes &darr;</h2>
+          <div className="grids">
+            {Posts}
+          </div>
+        </div>
+      </LatestRecipes>
+
     </Layout>
   )
 }
