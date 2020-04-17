@@ -6,7 +6,7 @@ public_folder: /assets
 collections:
   - name: recipe
     label: Recipes
-    folder: _data/recipes
+    folder: _data/blog
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     create: true
     fields:
